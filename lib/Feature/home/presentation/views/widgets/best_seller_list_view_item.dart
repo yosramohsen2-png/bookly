@@ -1,6 +1,8 @@
+import 'package:bookly/Feature/home/presentation/views/widgets/rating_books.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
   const BestSellerListViewItem({super.key});
@@ -24,37 +26,37 @@ class BestSellerListViewItem extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 30),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width * .5,
-                child: Text(
-                  'The Hurry Putter & the Goblet of Fire',
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: Styles.textStyle20.copyWith(
-                    fontFamily: 'GT Sectra Fine',
-                  ),
-                ),
-              ),
-              const SizedBox(height: 3),
-              Text('J.K. Rowling', style: Styles.textStyle14),
-              Row(
-                children: [
-                  Text(
-                    '\$20.00',
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * .5,
+                  child: Text(
+                    'The Hurry Putter & the Goblet of Fire',
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                     style: Styles.textStyle20.copyWith(
-                      fontWeight: FontWeight.bold,
+                      fontFamily: 'GT Sectra Fine',
                     ),
                   ),
-                  const SizedBox(width: 20),
-                  const Icon(Icons.star, color: Colors.amber, size: 16),
-                  const SizedBox(width: 5),
-                  const Text('4.8'),
-                ],
-              ),
-            ],
+                ),
+                const SizedBox(height: 3),
+                Text('J.K. Rowling', style: Styles.textStyle14),
+                Row(
+                  children: [
+                    Text(
+                      '\$20.00',
+                      style: Styles.textStyle20.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const Spacer(),
+                    RatingBooks(),
+                  ],
+                ),
+              ],
+            ),
           ),
         ],
       ),
